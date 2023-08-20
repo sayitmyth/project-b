@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help | Project B</title>
+
+    <!-- The Initail CSS Files -->
+
+    <link rel="stylesheet" href="output.css">
+
+
+    <!-- TAILWIND ELEMENTS CDN Link  -->
+
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.5.1/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.7/dist/tailwind.min.css" rel="stylesheet">
+
+    <!-- The Font Awesome Icons -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- The Google Fonts -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tektur:wght@500&display=swap" rel="stylesheet">
+
+    <!-- End Of google Fonts -->
+    <!-- END OF CDN ELEMENTS -->
+
+    <style>
+        .fa-search {
+            color: #8f8f8f;
+        }
+
+        .fa-cog {
+            color: #8f8f8f;
+        }
+
+        #intr {
+            text-align: center;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+        }
+
+        /* Home Button Main Center */
+
+        #centered-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 715px;
+            margin-top: 130px;
+            /* margin-bottom: 150px; */
+            border-radius: 50px;
+
+        }
+
+        /* Media query for mobile view */
+
+        @media (max-width: 767px) {
+            #centered-button {
+                flex-direction: column;
+                text-align: center;
+                margin: 10px auto;
+                /* margin-top: 130px; */
+                width: 140px;
+                border-radius: 50px;
+            }
+        }
+
+        /* Center cards vertically and horizontally */
+
+        .d-flex {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        /* Adjust card width and margin for different screen sizes */
+
+        .card {
+            width: 100%;
+            max-width: 20rem;
+            margin: 20px;
+        }
+
+        /* Media query for smaller screens */
+        @media (max-width: 767px) {
+            .d-flex {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .card {
+                max-width: 100%;
+            }
+        }
+
+
+
+        @media (max-width: 767px) {
+            #profileo {
+                margin-right: 30px;
+                margin-top: 5px;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            #recomend {
+                margin-top: 30px;
+                text-align: center;
+                font-family: 'Helvetica', sans-serif;
+                font-size: 25px;
+            }
+
+            .d-flex {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        #recomend {
+            margin-top: 25px;
+            margin-left: 55px;
+            font-size: 30px;
+            cursor: pointer;
+        }
+
+        /* screen dimmming code */
+        body.dimmed {
+            overflow: hidden;
+            /* Prevent scrolling when dimmed */
+        }
+
+        body.dimmed::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+            z-index: 50;
+            /* Adjust the z-index as needed */
+        }
+
+        body.dimmed.dim-overlay::before {
+            opacity: 1;
+            pointer-events: auto;
+        }
+    </style>
+    <title>Project B</title>
+</head>
+
+<body>
+
+    <!----------------------------------------------------START OF NAVBAR -->
+
+    <div class="navbar bg-base-100 sticky top-0 z-10"
+        style="box-shadow: 0 4px 8px 0 rgba(163, 156, 156, 0.2), 0 6px 20px 0 rgba(42, 27, 27, 0.19);">
+        <div class="navbar-start">
+
+            <!-- start of drawer -->
+
+            <div class="drawer">
+                <input id="my-drawer" type="checkbox" class="drawer-toggle" />
+                <div class="drawer-content">
+                    <!-- Page content here -->
+                    <label for="my-drawer" class="btn btn-ghost lg:hidden drawer-button"><svg
+                            xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h8m-8 6h16" />
+                        </svg></label>
+                </div>
+
+                <!-- the mobile navigation bar -->
+
+                <div class="drawer-side">
+                    <label for="my-drawer" class="drawer-overlay"></label>
+                    <ul class="menu p-4 w-80 h-full bg-base-200 text-base-content">
+                        <!-- <li style="padding-bottom: 20px;"><a>About</a></li> -->
+                       
+                        <li style="padding-bottom: 20px;"><a href="documentation.html">Documentation</a></li>
+                        <li tabindex="0">
+                            <details style="padding-bottom: 20px;">
+                                <summary class="mb-1">Themes</summary>
+                                <ul class="p-2 dropdowna" style="overflow-y: scroll; height:150px;">
+                                    <li><a style="padding-bottom: 20px; padding-top: 15px;" href="#"
+                                            id="themea">Valentina</a></li>
+                                    <li><a style="padding-bottom: 20px;" href="#" id="themeb">Dracula</a></li>
+                                    <li><a style="padding-bottom: 20px;" href="#" id="themec">Emerald</a></li>
+                                    <li><a style="padding-bottom: 20px;" href="#" id="themed">Cyberpunk</a></li>
+                                </ul>
+                            </details>
+                        </li>
+
+                        <li tabindex="0">
+                            <details style="padding-bottom: 20px;">
+                                <summary class="mb-1">Quick Settings</summary>
+                                <ul class="p-2">
+                                    <li style="padding-bottom: 20px;  padding-top: 15px;"><a>Settings</a></li>
+                                    <li style="padding-bottom: 20px;"><a href="privacy.html">Privacy Policy</a></li>
+                                </ul>
+                            </details>
+                        </li>
+                        <li style="padding-bottom: 20px;"><a href="help.html">Help</a></li>
+                        <li><a href="terms.html">T&C's</a></li>
+
+                    </ul>
+                </div>
+            </div>
+
+            <!-- end of drawer -->
+
+
+            <!-- the pc navigation bar  -->
+
+            <a href="index.html" class="btn btn-ghost normal-case text-xl" id="heart">Bharat <span class="text-orange-600">One</span></a>
+          </div>
+        <div class="navbar-center hidden lg:flex">
+            <ul class="menu menu-horizontal px-1">
+                <li><a href="help.html">Help</a></li>
+                <li><a href="documentation.html">Documentation</a></li>
+                <li><a href="privacy.html">Privacy Policy</a></li>
+                <li><a href="terms.html">T&C's</a></li>
+
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropbtn">Themes</a>
+                    <ul class="dropdown dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-lg w-52">
+                        <li><a href="#" id="theme1">Valentina</a></li>
+                        <li><a href="#" id="theme2">Dracula</a></li>
+                        <li><a href="#" id="theme3">Emerald</a></li>
+                        <li><a href="#" id="theme4">Cyberpunk</a></li>
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropbtn">language</a>
+                    <ul class=" dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-lg -box w-52">
+                        <li><button value="en">English</button></li>
+                        <li><button value="hi">Hindi</button></li>
+                        <li><button value="ma">Marathi</button></li>
+                        <li><button value="ka">kananda</button></li>
+                        <li><button value="te">Telegu</button></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="navbar-end">
+            <div class="dropdown dropdown-end">
+                <label tabindex="0" class="btn btn-ghost btn-circle avatar mr-3">
+                    <div class="w-10 rounded-full"
+                        style="border: 3px solid rgb(228, 200, 255); box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                        <img
+                            src="https://media.licdn.com/dms/image/D4D03AQH-tVcHNTfqSg/profile-displayphoto-shrink_800_800/0/1668423128831?e=2147483647&v=beta&t=G-Iep2O_-IhFiPySwtzGD-Y-tb2i54eMgqgJtDI7zNo" />
+                    </div>
+                </label>
+                <ul tabindex="0"
+                    class="menu menu-sm dropdown-content mt-2 z-[1] shadow bg-base-100 rounded-box w-52 p-2">
+                    <li class="p-2 btn rounded-sm mb-1">
+                        <a class="justify-between">
+                            Profile
+                            <span class="badge">New</span>
+                        </a>
+                    </li>
+                    <li class="p-1 btn rounded-sm mb-1"><a>UID6OF99Z3VB</a></li>
+                    <li class="p-1 btn rounded-sm mb-1"><a>
+                            <center>Manage Your Account</center>
+                        </a></li>
+                    <li class="p-1 btn rounded-sm mb-1"><a>Settings</a></li>
+                    <li class="p-1 btn rounded-sm"><a>Logout</a></li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+    <!------------------------------------------------------ END OF NAVBAR -->
+
+    <!---------------------------------------------------------- Main Body Content -->
+
+    <body>
+       
+        <div class="container mx-auto mt-8 ml-4">
+            <h2 class="text-3xl font-semibold mb-6">How to Use Bharat One App and Website</h2>
+            
+            <div class="prose">
+              <p>Welcome to the comprehensive guide on using the Bharat One app and website. Whether you're new to the platform or looking for advanced features, we're here to help you navigate through every step.</p>
+              
+              <br>
+              <h3 class="text-xl font-semibold mb-2">Downloading and Installation</h3>
+              <p>To get started, visit our official website at <a href="https://www.bharatoneapp.com" class="text-blue-500 hover:underline">www.bharatoneapp.com</a>. Download the app for your mobile device from the App Store (iOS) or Google Play Store (Android). Install the app and open it.</p>
+              
+              <br>
+              <h3 class="text-xl font-semibold mb-2">Registration and Account Setup</h3>
+              <p>Launch the app and follow the on-screen prompts to create your account. Provide accurate personal information including your name, age, gender (optional), email address, phone number, and home address. Choose your preferred language for a personalized experience.</p>
+              
+              <br>
+              <h3 class="text-xl font-semibold mb-2">Emergency Reporting</h3>
+              <p>In case of an emergency, tap the prominent "Emergency" button on the home screen. Follow the prompts to report the type of emergency and provide essential details. Our app will immediately notify authorities and emergency responders in your area.</p>
+              
+              <br>
+              <h3 class="text-xl font-semibold mb-2">Real-time Updates and Communication</h3>
+              <p>Stay informed about incidents in your vicinity by visiting the "Incident Updates" section. Engage with fellow users and emergency responders through the "Safety Chat" feature. Share vital information and coordinate safety efforts with your community.</p>
+              
+              <br>
+              <h3 class="text-xl font-semibold mb-2">Safety Information and Resources</h3>
+              <p>Access critical safety details such as evacuation routes, shelter locations, and first aid tips by navigating to the "Safety Information" section. Prepare yourself and your loved ones with essential resources and guidelines.</p>
+              
+              <br>
+              <h3 class="text-xl font-semibold mb-2">Account Management</h3>
+              <p>Manage your account settings, emergency contacts, and language preferences in the "Profile" section. Keep your information up-to-date to ensure accurate assistance during emergencies.</p>
+              
+              <br>
+              <h3 class="text-xl font-semibold mb-2">Contact Us</h3>
+              <p>If you have any questions or need assistance, don't hesitate to reach out to our dedicated support team. Send an email to <a href="mailto:support@bharatoneapp.com" class="text-blue-500 hover:underline">support@bharatoneapp.com</a>.</p>
+            </div>
+          </div>
+          <br><br><br>
+
+    <!-- The Start Bottom Navigation Bar -->
+
+    <div class="btm-nav lg:hidden bottom-0 z-10 fixed"
+        style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+
+        <button class="active">
+
+            <!-- The Home Menu -->
+
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+            </svg>
+        </button>
+
+        <!-- the explore menu -->
+
+        <button>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5">
+                <circle cx="11" cy="11" r="8" />
+                <line x1="21" y1="21" x2="16.65" y2="16.65" />
+            </svg>
+        </button>
+
+        <!-- alert menu -->
+
+        <button>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+        </button>
+
+        <!-- the settings menu -->
+
+        <button>
+            <img src="setting.svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="opacity: 70%; color: #df6767;">
+        </button>
+    </div>
+
+    <!-- The End of Bottom navigation Bar -->
+
+
+    <!-- the FontAwesome Javascript -->
+
+    <script src="https://kit.fontawesome.com/399e59f5b2.js" crossorigin="anonymous"></script>
+
+    <script>
+
+        // the pc theme changer 
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const dropdown = document.querySelector(".dropdown");
+            const themeButtons = dropdown.querySelectorAll("a");
+
+            themeButtons.forEach(button => {
+                button.addEventListener("click", function (event) {
+                    event.preventDefault();
+                    const themeId = button.id;
+                    handleThemeChange(themeId);
+                });
+            });
+
+            function handleThemeChange(themeId) {
+                switch (themeId) {
+                    case "theme1":
+                        document.documentElement.setAttribute("data-theme", "valentine");
+                        // Add your custom action for Theme 1 here
+                        break;
+                    case "theme2":
+                        document.documentElement.setAttribute("data-theme", "dracula");
+                        // Add your custom action for Theme 2 here
+                        break;
+                    case "theme3":
+                        document.documentElement.setAttribute("data-theme", "emerald");
+                        // Add your custom action for Theme 3 here
+                        break;
+                    case "theme4":
+                        document.documentElement.setAttribute("data-theme", "cyberpunk");
+                        // Add your custom action for Theme 4 here
+                        break;
+                }
+            }
+
+            const dropdownMenu = dropdown.querySelector(".dropdown-menu");
+            const button = document.querySelector(".btn-primary");
+
+            button.addEventListener("click", function () {
+                dropdownMenu.classList.toggle("hidden");
+            });
+
+            window.addEventListener("click", function (event) {
+                if (!button.contains(event.target)) {
+                    dropdownMenu.classList.add("hidden");
+                }
+            });
+        });
+    </script>
+
+    <script>
+
+        // the mobile theme changer
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const dropdowna = document.querySelector(".dropdowna");
+            const themeButtons = dropdowna.querySelectorAll("a");
+
+            themeButtons.forEach(button => {
+                button.addEventListener("click", function (event) {
+                    event.preventDefault();
+                    const themeId = button.id;
+                    handleThemeChange(themeId);
+                });
+            });
+
+            function handleThemeChange(themeId) {
+                switch (themeId) {
+                    case "themea":
+                        document.documentElement.setAttribute("data-theme", "valentine");
+                        // Add your custom action for Theme 1 here
+                        break;
+                    case "themeb":
+                        document.documentElement.setAttribute("data-theme", "dracula");
+                        // Add your custom action for Theme 2 here
+                        break;
+                    case "themec":
+                        document.documentElement.setAttribute("data-theme", "emerald");
+                        // Add your custom action for Theme 3 here
+                        break;
+                    case "themed":
+                        document.documentElement.setAttribute("data-theme", "cyberpunk");
+                        // Add your custom action for Theme 4 here
+                        break;
+                }
+            }
+
+            const dropdownMenu = dropdown.querySelector(".dropdown-menu");
+            const button = document.querySelector(".btn-primary");
+
+            button.addEventListener("click", function () {
+                dropdownMenu.classList.toggle("hidden");
+            });
+
+            window.addEventListener("click", function (event) {
+                if (!button.contains(event.target)) {
+                    dropdownMenu.classList.add("hidden");
+                }
+            });
+        });
+    </script>
+
+
+    <script>
+        const toggle = document.querySelector('#toggle');
+
+        toggle.addEventListener('click', () => {
+            if (toggle.checked) {
+                document.documentElement.setAttribute('data-theme', "luxury");
+            } else {
+                document.documentElement.setAttribute('data-theme', "emerald");
+            }
+        });
+
+
+
+    </script>
+
+
+</body>
+
+</html>
